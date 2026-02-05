@@ -1,0 +1,273 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+/*HEADER ---ENCABEZADO*/
+header {
+    display: flex;
+    flex-direction: column;
+    height: 152px;
+    background-color: #004793;
+}
+/*===========================================================================*/
+.bar-top {
+    height: 112px;
+    width: 100%;
+    /* background-color: aqua; */
+    display: grid;
+    grid-template:40px 1fr / 33% 1fr;
+    grid-template-areas:
+    "img-alk-start nav-top"
+    "img-alk-start browser-count-car";
+    border-bottom: 2px solid orangered;
+}
+.img-alk-start {
+    grid-area: img-alk-start;
+    /* background-color: aquamarine; */
+    height: inherit;
+    text-align: center;
+}
+.img-alk-start img {
+    height: 100%;
+}
+.nav-top {
+    grid-area: nav-top;
+    /* background-color: rgb(201, 169, 130); */
+    width: 40px;
+    overflow: auto;
+    width: 100%;
+}
+.nav-top ul {
+    display: flex;
+    height: 100%;
+    gap: clamp(0.2rem, 1vw, 1.5rem);
+    list-style: none;
+    justify-content: left;
+    overflow-x: hidden;
+    width: inherit;
+}
+.nav-top li {
+    height: inherit;
+    align-content: center;
+    
+}
+.hiperofertas {
+    background-color:#6d76c5;
+    height: 100%;
+    border-radius: 0px 0px 1rem 1rem;
+    padding: 0 0.5rem;
+}
+.nav-top a {
+    text-decoration: none;
+    color: #fff;
+    white-space: nowrap;
+}
+.browser-count-car {
+    grid-area: browser-count-car;
+    height: 72px;
+    /* background-color: rgb(98, 137, 139); */
+    display: flex;
+    overflow: hidden;
+}
+.browser {
+    flex: 3;
+    margin: 1rem 0.2rem;
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+}
+.icon {
+    background-image: url(./img/icono-buscar.png);
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    align-self: center;
+    margin: 0 5px;
+}
+.search {
+    flex: 1;
+    border: 0;
+    margin: 0 1rem;
+}
+.my-car, .my-count {
+    height: 100%;
+    flex: 1;
+    /* background-color: cornflowerblue; */
+    justify-items: center;
+    color: #fff;
+    text-decoration: none;
+}
+/*Es necesario una caja para las count y car, para que solo se active esa parte y no todo el contenedor*/
+.my-count img {
+    max-height: 65%;
+    display: block;
+    margin-top: 3px;
+}
+.my-count h4 {
+    white-space: nowrap;
+    margin-bottom: 3px;
+}
+.my-car img {
+    max-height: 65%;
+    display: block;
+    margin-top: 3px;
+}
+.my-car h4 {
+    white-space: nowrap;
+    margin-bottom: 3px;
+}
+/*===========================================================================*/
+.nav-main {
+    height: 40px;
+    width: 100%;
+    min-width: 200px;
+    background-color: #eee;
+    border-top: 2px solid orangered;
+}
+.nav-main ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    height: 100%;
+    overflow-x: hidden;
+}
+.nav-main li {
+    flex: 0 0 auto;
+    min-width: 0;
+    /* height: 100%; */
+    align-content: center;
+    padding:0 clamp(0.4rem, 1vw, 1rem);
+    white-space: nowrap;
+    border-left: 1px solid #000;
+}
+.nav-main li:first-child{
+    border: none;
+}
+.nav-main li:hover {
+    height: 100%;
+    cursor: pointer;
+    background-color: #00f;
+    color: #fff;
+}
+.nav-main ul a {
+    text-decoration: none;
+    color: #004793;
+}
+.nav-main a:hover {
+    color: #fff;
+}
+/*----- MAIN----CUERPO ---- PRINCIPAL -----*/
+.container-1 {
+    height: 600px;
+    /* background-color: red; */
+    background-image: url(./img/ak-fondo-hiper-navidad-desk-2.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+.hiper-navidad {
+    display: grid;
+    grid-template: 100px 100px / repeat(12, 1fr);
+    gap: 16px;
+    margin: 0 20px 20px 20px;
+}
+.hiper-navidad div {
+    height: 90%;
+    width: 90%;
+    min-height: 100%;
+    border: 1px solid #000;
+    justify-items: center;
+    align-content: center;
+    overflow-x: hidden;
+    background-color: #fff;
+}
+.hiper-navidad a {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid blue;
+}
+.hiper-navidad img {
+    flex: 8;
+    max-width: 100%;
+    max-height: 100%;
+    justify-content: center;
+    align-content: center;
+    object-fit: cover;
+}
+.hiper-navidad figcaption {
+    flex: 2;
+    font-size: 0.8rem;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@q*/
+@media (max-width: 1200px){
+    header {
+        height: auto;
+    }
+
+    .nav-top ul {
+        flex: 0 1 auto;
+    }
+    .nav-top li {
+        flex: 0 1 auto;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #fff;
+    }
+
+    .nav-main {
+        /* min-height: 40px; */
+        height: auto;
+        /* background-color: red; */
+    }
+    .nav-main ul {
+        display: flex;
+        justify-content: flex-start;
+        overflow: visible;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+    .nav-main li {
+        flex: 0 0 auto;
+        padding: 0.5rem 1rem;
+        white-space: nowrap;
+    }
+}
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+@media (max-width: 1000px) {
+    .my-count, .my-car, .nav-top, .nav-main {
+        display: none;
+    }
+    .bar-top {
+        display: flex;
+    }
+    .browser-count-car {
+        display: flex;
+    }
+
+    /*--------------------------------------------------------*/
+
+}
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+@media (max-width: 768px) {
+
+}
